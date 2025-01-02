@@ -1,5 +1,6 @@
 package com.med.voll.api.controller;
 
+import com.med.voll.api.dto.medico.DadosAtualizacaoMedicoDto;
 import com.med.voll.api.dto.medico.DadosCadastroMedicoDto;
 import com.med.voll.api.dto.medico.DadosListagemMedicoDto;
 import com.med.voll.api.models.Medico;
@@ -29,5 +30,12 @@ public class MedicoController {
     public Page<DadosListagemMedicoDto> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao)
                 .map(DadosListagemMedicoDto::new); // neste caso, a record vai precisar de um construtor para a conversao de mdico para listagemMedicoDto
+    }
+
+    @PutMapping
+    @Transactional // o transactional faz o trabalho de update sozinho
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoMedicoDto dados) {
+        var medico = repository.getReferenceById(dados.id());
+        medico.atualizarInformacoes(dados);
     }
 }
