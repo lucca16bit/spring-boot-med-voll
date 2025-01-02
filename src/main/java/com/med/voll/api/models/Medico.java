@@ -2,16 +2,10 @@ package com.med.voll.api.models;
 
 import com.med.voll.api.dto.medico.DadosCadastroMedicoDto;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Table(name = "medicos")
 @Entity(name = "medico")
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
 
@@ -29,6 +23,47 @@ public class Medico {
 
     @Embedded
     private Endereco endereco;
+
+    public Medico() {
+    }
+
+    public Medico(Long id, String nome, String email, String telefone, String crm, Especialidade especialidade, Endereco endereco) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.crm = crm;
+        this.especialidade = especialidade;
+        this.endereco = endereco;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
 
     public Medico(DadosCadastroMedicoDto dados) {
         this.nome = dados.nome();
