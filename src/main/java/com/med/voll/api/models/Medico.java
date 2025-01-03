@@ -25,10 +25,12 @@ public class Medico {
     @Embedded
     private Endereco endereco;
 
+    private Boolean ativo;
+
     public Medico() {
     }
 
-    public Medico(Long id, String nome, String email, String telefone, String crm, Especialidade especialidade, Endereco endereco) {
+    public Medico(Long id, String nome, String email, String telefone, String crm, Especialidade especialidade, Endereco endereco, Boolean ativo) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -36,6 +38,7 @@ public class Medico {
         this.crm = crm;
         this.especialidade = especialidade;
         this.endereco = endereco;
+        this.ativo = ativo;
     }
 
     public Long getId() {
@@ -66,6 +69,10 @@ public class Medico {
         return endereco;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
     public Medico(DadosCadastroMedicoDto dados) {
         this.nome = dados.nome();
         this.email = dados.email();
@@ -73,6 +80,7 @@ public class Medico {
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+        this.ativo = true;
     }
 
     public void atualizarInformacoes(DadosAtualizacaoMedicoDto dados) {
@@ -85,5 +93,9 @@ public class Medico {
         if (dados.endereco() != null) {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
