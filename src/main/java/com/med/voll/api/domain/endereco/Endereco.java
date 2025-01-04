@@ -1,4 +1,4 @@
-package com.med.voll.api.models;
+package com.med.voll.api.domain.endereco;
 
 import com.med.voll.api.dto.endereco.DadosEnderecoDto;
 import jakarta.persistence.Embeddable;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Embeddable
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Endereco {
     private String logradouro;
     private String bairro;

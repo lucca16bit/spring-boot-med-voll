@@ -1,7 +1,8 @@
-package com.med.voll.api.models;
+package com.med.voll.api.domain.medico;
 
 import com.med.voll.api.dto.medico.DadosAtualizacaoMedicoDto;
 import com.med.voll.api.dto.medico.DadosCadastroMedicoDto;
+import com.med.voll.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 

@@ -4,7 +4,7 @@ import com.med.voll.api.dto.medico.DadosAtualizacaoMedicoDto;
 import com.med.voll.api.dto.medico.DadosCadastroMedicoDto;
 import com.med.voll.api.dto.medico.DadosDetalhadoMedicoDto;
 import com.med.voll.api.dto.medico.DadosListagemMedicoDto;
-import com.med.voll.api.models.Medico;
+import com.med.voll.api.domain.medico.Medico;
 import com.med.voll.api.repository.MedicoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
