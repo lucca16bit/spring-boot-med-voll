@@ -1,5 +1,6 @@
 package com.med.voll.api.domain.paciente;
 
+import com.med.voll.api.dto.paciente.DadosAtualizacaoPacienteDto;
 import com.med.voll.api.dto.paciente.DadosCadastroPacienteDto;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
@@ -37,7 +38,7 @@ public class Paciente {
         this.endereco = new Endereco(dados.endereco());
     }
 
-    public void atualizarInformacoes(DadosCadastroPacienteDto dados) {
+    public void atualizarInformacoes(DadosAtualizacaoPacienteDto dados) {
         if (dados.nome() != null) {
             this.nome = dados.nome();
         }
