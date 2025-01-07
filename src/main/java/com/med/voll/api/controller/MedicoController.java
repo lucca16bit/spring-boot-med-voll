@@ -40,11 +40,13 @@ public class MedicoController {
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemMedicoDto>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+
         var page = repository.findAllByAtivoTrue(paginacao)
                 .map(DadosListagemMedicoDto::new); // neste caso, a record vai precisar de um construtor para a conversao de mdico para listagemMedicoDto
 
         // para devolver código http (200)
         return ResponseEntity.ok(page);
+
     }
 
     @PutMapping
