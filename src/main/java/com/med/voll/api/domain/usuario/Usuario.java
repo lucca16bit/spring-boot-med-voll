@@ -11,7 +11,6 @@ import java.util.List;
 
 @Table(name = "usuarios")
 @Entity(name = "usuario")
-
 @EqualsAndHashCode(of = "id")
 public class Usuario implements UserDetails {
 
