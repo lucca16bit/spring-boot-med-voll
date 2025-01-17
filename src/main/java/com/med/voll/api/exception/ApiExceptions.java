@@ -25,6 +25,11 @@ public class ApiExceptions {
                 .map(DadosErroValidacao::new).toList());
     }
 
+    @ExceptionHandler(ValidacaoException.class)
+    public ResponseEntity tratarErroRegradeNegocio(ValidacaoException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
     // dessa forma, conseguimos converter a lista de FieldError para uma lista de DadosErroValidacao
     private record DadosErroValidacao(String campo, String mensagem) {
         public DadosErroValidacao(FieldError erro) {

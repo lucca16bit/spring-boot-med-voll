@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Table(name = "consultas")
-@Entity(name = "consulta")
+@Entity(name = "Consulta")
 @EqualsAndHashCode(of = "id")
 public class Consulta {
 

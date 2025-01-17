@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Table(name = "usuarios")
-@Entity(name = "usuario")
+@Entity(name = "Usuario")
 @EqualsAndHashCode(of = "id")
 public class Usuario implements UserDetails {
 

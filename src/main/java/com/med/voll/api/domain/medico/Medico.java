@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 
 @Table(name = "medicos")
-@Entity(name = "medico")
+@Entity(name = "Medico")
 @EqualsAndHashCode(of = "id")
 public class Medico {
 
