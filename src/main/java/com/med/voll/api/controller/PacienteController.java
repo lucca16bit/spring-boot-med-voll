@@ -5,6 +5,7 @@ import com.med.voll.api.dto.paciente.DadosAtualizacaoPacienteDto;
 import com.med.voll.api.dto.paciente.DadosCadastroPacienteDto;
 import com.med.voll.api.dto.paciente.DadosListagemPacienteDto;
 import com.med.voll.api.repository.PacienteRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("pacientes")
+@SecurityRequirement(name = "bearer-key")
 public class PacienteController {
 
     @Autowired
